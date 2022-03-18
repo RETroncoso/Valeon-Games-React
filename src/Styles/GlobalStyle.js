@@ -13,7 +13,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 ;
+    margin: 0;
+    width: 98.5%;
 }
 
 a {

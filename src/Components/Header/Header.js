@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import LogoImg from "../../img/logo.jpg";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
+import * as cartActions from "../../Redux/cart/cart-actions";
+import { useDispatch } from "react-redux";
 
 const HeaderContainer = styled.header`
   background-color: #1f1f1f;
@@ -9,7 +11,9 @@ const HeaderContainer = styled.header`
   height: 11vh;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  z-index: 6;
+  position: fixed;
+  top: 0;
 `;
 
 const HeaderLinks = styled.ul`
@@ -47,6 +51,12 @@ const RightLi = styled.li`
 `;
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const showMenu = () => {
+    dispatch(cartActions.toggleCart());
+  };
+
   return (
     <HeaderContainer>
       <HeaderLinks>
@@ -69,6 +79,7 @@ const Header = () => {
         </RightLi>
         <RightLi>
           <FaShoppingCart
+            onClick={() => showMenu()}
             style={{ color: "#a509e2", fontSize: "1.5rem", cursor: "pointer" }}
           />
         </RightLi>

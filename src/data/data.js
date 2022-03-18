@@ -1,7 +1,7 @@
 export const productsItems = [
   {
     id: 1,
-    nombre: "Mouse Kolke Dragon Series KMG-100",
+    nombre: "Mouse Kolke Dragon KMG-100",
     precio: 560,
     section: "Mouse",
     foto: "/img/m1.jpg",

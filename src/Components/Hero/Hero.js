@@ -6,6 +6,7 @@ const StyledHero = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  margin-top: 15vh;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(${NosotrosImg});
