@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { formatPrice } from "../../utils/formatPrice";
 import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { useDispatch, useSelector } from "react-redux";
+import * as cartActions from "../../Redux/cart/cart-actions";
 
 const StyledCard = styled.div`
   border: violet 1px solid;
@@ -52,6 +54,15 @@ const StyledIcon = styled.div`
 `;
 
 export const Card = ({ producto, openedProduct, setOpenedProduct }) => {
+  const itemsEnCarrito = useSelector((state) => state.cart.cartItems);
+
+  const dispatch = useDispatch();
+
+  const agregarItem = () => {
+    dispatch(cartActions.addItem(producto));
+    console.log(itemsEnCarrito);
+  };
+
   return (
     <StyledCard>
       <StyledTitle>{producto.nombre}</StyledTitle>
@@ -59,7 +70,7 @@ export const Card = ({ producto, openedProduct, setOpenedProduct }) => {
       <StyledPrice>
         {formatPrice(producto.precio)}
         <StyledIcon onClick={() => setOpenedProduct(producto)}>
-          <MdOutlineAddShoppingCart />
+          <MdOutlineAddShoppingCart onClick={agregarItem} />
         </StyledIcon>
       </StyledPrice>
     </StyledCard>
