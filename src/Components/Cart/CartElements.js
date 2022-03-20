@@ -14,7 +14,18 @@ export const CartContainer = styled.div`
 `;
 export const CartItem = styled.div`
   padding: 10px 5px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 20% 40% 40%;
   justify-content: space-between;
+`;
+
+export const ProductImg = styled.div`
+  width: 46px;
+  height: 46px;
+  background-image: ${({ img }) => `url(${img})`};
+  background-size: cover;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  border-radius: 10px;
 `;

@@ -1,7 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import { CartContainer, CartContent, CartItem } from "./CartElements";
+import {
+  CartContainer,
+  CartContent,
+  CartItem,
+  ProductImg,
+} from "./CartElements";
+import { CartQuantity } from "./CartQuantity";
+
+import { formatPrice } from "../../utils/formatPrice";
 
 const StyledCart = styled.div`
   position: fixed;
@@ -21,18 +29,39 @@ const StyledCart = styled.div`
 
 export const Cart = () => {
   let mostrar = useSelector((state) => state.cart.show);
+  let productosCarrito = useSelector((state) => state.cart.cartItems);
 
   return (
     <StyledCart show={mostrar}>
-      <CartContent>
-        <CartContainer>
-          <CartItem>
-            <div style={{ width: "20%" }}>Imagen</div>
-            <div style={{ width: "40%" }}>Producto</div>
-            <div style={{ width: "40%" }}>Manejar cantidad</div>
-          </CartItem>
-        </CartContainer>
-      </CartContent>
+      {productosCarrito?.length === 0 ? (
+        <CartContent>Tu carrito está vacío =( </CartContent>
+      ) : (
+        <CartContent>
+          <CartContainer style={{ fontSize: "1.2rem", marginBottom: "10px" }}>
+            Tu pedido:
+          </CartContainer>
+
+          {productosCarrito.map((product) => (
+            <CartContainer>
+              <CartItem>
+                <ProductImg img={product.foto} />
+                <div style={{ marginLeft: "5px" }}>
+                  <div
+                    style={{
+                      fontSize: "0.8rem",
+                      marginBottom: "5px",
+                    }}
+                  >
+                    {product.nombre}
+                  </div>
+                  {formatPrice(product.precio * product.quantity)}
+                </div>
+                <CartQuantity product={product} />
+              </CartItem>
+            </CartContainer>
+          ))}
+        </CartContent>
+      )}
     </StyledCart>
   );
 };
