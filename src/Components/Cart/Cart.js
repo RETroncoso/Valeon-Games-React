@@ -1,15 +1,17 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import {
   CartContainer,
   CartContent,
   CartItem,
   ProductImg,
+  ConfirmButton,
+  CartFooter,
 } from "./CartElements";
 import { CartQuantity } from "./CartQuantity";
-
 import { formatPrice } from "../../utils/formatPrice";
+import * as cartActions from "../../Redux/cart/cart-actions";
 
 const StyledCart = styled.div`
   position: fixed;
@@ -30,6 +32,15 @@ const StyledCart = styled.div`
 export const Cart = () => {
   let mostrar = useSelector((state) => state.cart.show);
   let productosCarrito = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
+
+  const cerrarCarrito = () => {
+    dispatch(cartActions.toggleCart());
+  };
+
+  const total = productosCarrito.reduce((acc, item) => {
+    return acc + item.precio * item.quantity;
+  }, 0);
 
   return (
     <StyledCart show={mostrar}>
@@ -60,6 +71,11 @@ export const Cart = () => {
               </CartItem>
             </CartContainer>
           ))}
+          <CartFooter>
+            <ConfirmButton onClick={() => cerrarCarrito()}>
+              Ir a pagar {formatPrice(total)}
+            </ConfirmButton>
+          </CartFooter>
         </CartContent>
       )}
     </StyledCart>

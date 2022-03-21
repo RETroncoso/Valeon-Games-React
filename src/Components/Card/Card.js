@@ -53,7 +53,7 @@ const StyledIcon = styled.div`
   }
 `;
 
-export const Card = ({ producto, openedProduct, setOpenedProduct }) => {
+export const Card = ({ producto }) => {
   const itemsEnCarrito = useSelector((state) => state.cart.cartItems);
 
   const dispatch = useDispatch();
@@ -69,7 +69,7 @@ export const Card = ({ producto, openedProduct, setOpenedProduct }) => {
       <StyledImg src={producto.foto} />
       <StyledPrice>
         {formatPrice(producto.precio)}
-        <StyledIcon onClick={() => setOpenedProduct(producto)}>
+        <StyledIcon>
           <MdOutlineAddShoppingCart onClick={agregarItem} />
         </StyledIcon>
       </StyledPrice>

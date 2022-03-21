@@ -17,7 +17,7 @@ const ManagerContainer = styled.div`
   margin: 5px;
   height: 32px;
   padding: 10px;
-  box-shadow: 0 6px 10px 0 rgba(128, 98, 96, 0.16);
+  box-shadow: 0px 0px 20px 7px rgba(235, 83, 202, 0.16);
 `;
 
 const QuantityStyled = styled.span`
@@ -34,9 +34,6 @@ const QuantityButton = styled.div`
   cursor: pointer;
   line-height: 23px;
   margin: 0px 10px;
-  &:hover {
-    background-color: #ffe3e3;
-  }
 `;
 
 const DeleteIconStyled = styled.div`

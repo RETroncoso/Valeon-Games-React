@@ -29,3 +29,26 @@ export const ProductImg = styled.div`
   justify-content: center;
   border-radius: 10px;
 `;
+
+export const CartFooter = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+export const ConfirmButton = styled.div`
+  margin: 10px;
+  color: white;
+  height: auto;
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  cursor: pointer;
+  background-color: #a509e2;
+  text-align: center;
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    opacity: 1;
+  }
+`;
