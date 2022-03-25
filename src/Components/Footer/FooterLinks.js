@@ -7,6 +7,7 @@ const StyledLinks = styled.ul`
   font-size: 1.25rem;
   align-items: center;
   width: 33%;
+  margin-top: 0;
   li {
     margin: 5px 0px;
   }

@@ -7,7 +7,12 @@ const Home = () => {
   return (
     <>
       <Hero></Hero>
-      <CustomInput placeholder="Buscar..." paddingLeft="10px" width="80%" />
+      <CustomInput
+        onChange
+        placeholder="Buscar..."
+        paddingLeft="10px"
+        width="80%"
+      />
       <ProductsContainer />
     </>
   );

@@ -8,6 +8,7 @@ import {
 } from "../Components/Login/LoginForm";
 import { LogoContainer } from "../Components/Login/LoginLogo";
 import LogoImg from "../img/logo.jpg";
+import { useState } from "react";
 
 const LoginContainer = styled.div`
   max-width: 75vw;
@@ -20,20 +21,31 @@ const LoginContainer = styled.div`
 `;
 
 const Login = () => {
+  const [isLoginMode, setIsLoginMode] = useState(true);
+  const changeModeHandler = () => {
+    return setIsLoginMode(!isLoginMode);
+  };
+
   return (
     <LoginContainer>
       <LogoContainer>
         <img alt="" src={LogoImg} />
       </LogoContainer>
       <FormContainer>
-        <FormInput placeholder="Nombre" />
-        <FormInput placeholder="Apellido" />
+        {!isLoginMode && <FormInput placeholder="Nombre" />}
+        {!isLoginMode && <FormInput placeholder="Apellido" />}
         <FormInput type="email" placeholder="Email" />
         <FormInput type="password" placeholder="Contraseña" />
-        <FormInput type="password" placeholder="Repita su contraseña" />
+        {!isLoginMode && (
+          <FormInput type="password" placeholder="Repita su contraseña" />
+        )}
       </FormContainer>
-      <FormButton>Registrarse</FormButton>
-      <FormLabel>Ya tenes cuenta? Ingresa haciendo click acá</FormLabel>
+      <FormButton>{isLoginMode ? "Ingresar" : "Registrarse"}</FormButton>
+      <FormLabel onClick={changeModeHandler}>
+        {isLoginMode
+          ? "Aún no tenés cuenta? Creala acá!"
+          : "Ya tenes cuenta? Ingresa haciendo click acá"}
+      </FormLabel>
     </LoginContainer>
   );
 };

@@ -7,7 +7,7 @@ import { FooterRedes } from "./FooterRedes";
 const StyledFooterContainer = styled.footer`
   display: flex;
   margin-top: 25px;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   border-top: violet 1px solid;
   width: 100%;
   height: 10vh;

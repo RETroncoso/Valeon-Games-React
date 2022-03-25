@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 const StyledInput = styled.input`
   border: none;
@@ -16,6 +17,7 @@ const StyledInput = styled.input`
 export const CustomInput = (props) => {
   return (
     <StyledInput
+      onChange={""}
       placeholder={props.placeholder}
       style={{
         paddingLeft: props.paddingLeft,

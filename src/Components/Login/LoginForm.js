@@ -35,4 +35,5 @@ export const FormButton = styled.button`
 export const FormLabel = styled.p`
   font-size: 0.75rem;
   padding: 0 25px;
+  cursor: pointer;
 `;
