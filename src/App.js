@@ -1,4 +1,4 @@
-import { Router } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import "./App.css";
@@ -11,6 +11,7 @@ import Shadow from "./Components/Shadow/Shadow";
 import Wrapper from "./Components/Wrapper/Wrapper";
 import Home from "./pages/Home";
 import { GlobalStyle } from "./Styles/GlobalStyle";
+import Login from "./pages/Login";
 
 function App() {
   let mostrar = useSelector((state) => state.cart.show);
@@ -18,16 +19,21 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <BrowserRouter>
+        <Header />
+        {mostrar && <Shadow />}
+        <Cart />
+        <Wrapper>
+          <Content>
+            <Routes>
+              <Route exact path="/" element={<Home />} />
 
-      <Header />
-      {mostrar && <Shadow />}
-      <Cart />
-      <Wrapper>
-        <Content>
-          <Home />
-        </Content>
-        <Footercontainer />
-      </Wrapper>
+              <Route exact path="/login" element={<Login />} />
+            </Routes>
+          </Content>
+          <Footercontainer />
+        </Wrapper>
+      </BrowserRouter>
     </>
   );
 }

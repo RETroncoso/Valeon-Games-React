@@ -4,6 +4,7 @@ import LogoImg from "../../img/logo.jpg";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import * as cartActions from "../../Redux/cart/cart-actions";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header`
   background-color: #1f1f1f;
@@ -12,7 +13,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   z-index: 6;
-  position: fixed;
+  position: sticky;
   top: 0;
 `;
 
@@ -67,15 +68,24 @@ const Header = () => {
           <a href="#productos">Productos</a>
         </HeaderLi>
       </HeaderLinks>
+
       <LogoContainer>
-        <Logo src={LogoImg} />
+        <Link to="/">
+          <Logo src={LogoImg} />
+        </Link>
       </LogoContainer>
       <HeaderRight>
         <RightLi>Hola, persona!</RightLi>
         <RightLi>
-          <FaUser
-            style={{ color: "#a509e2", fontSize: "1.5rem", cursor: "pointer" }}
-          />
+          <Link to="/login">
+            <FaUser
+              style={{
+                color: "#a509e2",
+                fontSize: "1.5rem",
+                cursor: "pointer",
+              }}
+            />
+          </Link>
         </RightLi>
         <RightLi>
           <FaShoppingCart

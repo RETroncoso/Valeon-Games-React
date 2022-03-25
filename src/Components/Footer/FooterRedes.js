@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FaInstagram, FaFacebook, FaTwitter } from "react-icons/fa";
 
 const StyledRedes = styled.ul`
+  width: 33%;
   margin-right: 30px;
   display: flex;
   font-size: 1.75rem;

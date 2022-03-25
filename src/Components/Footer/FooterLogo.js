@@ -6,6 +6,7 @@ const StyledFooterLogo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 33%;
 `;
 
 const StyledLogoContainer = styled.div`

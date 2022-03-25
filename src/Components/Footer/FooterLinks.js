@@ -6,6 +6,7 @@ const StyledLinks = styled.ul`
   flex-direction: column;
   font-size: 1.25rem;
   align-items: center;
+  width: 33%;
   li {
     margin: 5px 0px;
   }
@@ -15,10 +16,10 @@ export const FooterLinks = () => {
   return (
     <StyledLinks>
       <li>
-        <a href="#nosotros">Nosotros</a>
+        <a href="#">Nosotros</a>
       </li>
       <li>
-        <a href="#productos">Productos</a>
+        <a href="#">Productos</a>
       </li>
     </StyledLinks>
   );
