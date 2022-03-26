@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import * as productsActions from "../../Redux/products/products-actions";
 
 const StyledInput = styled.input`
   border: none;
@@ -15,9 +16,16 @@ const StyledInput = styled.input`
 `;
 
 export const CustomInput = (props) => {
+  const dispatch = useDispatch();
+
+  const searchHandler = (e) => {
+    console.log(e.target.value);
+    dispatch(productsActions.searchItem(e.target.value));
+  };
+
   return (
     <StyledInput
-      onChange={""}
+      onChange={searchHandler}
       placeholder={props.placeholder}
       style={{
         paddingLeft: props.paddingLeft,
