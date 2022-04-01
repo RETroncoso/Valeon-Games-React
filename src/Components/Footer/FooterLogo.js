@@ -29,7 +29,7 @@ export const FooterLogo = () => {
     <StyledFooterLogo>
       <StyledLogoContainer>
         <img src={logoFooter} />
-        <p>&copy; 2021 Rodrigo Troncoso for NUCBA</p>
+        <p>&copy; 2022 Rodrigo Troncoso for NUCBA</p>
       </StyledLogoContainer>
     </StyledFooterLogo>
   );
