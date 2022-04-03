@@ -10,13 +10,14 @@ import { LogoContainer } from "../Components/Login/LoginLogo";
 import LogoImg from "../img/logo.jpg";
 import { useState } from "react";
 import useForm from "../Hooks/useForm";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   VALIDATOR_EMAIL,
   VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from "../utils/validator";
-import { History } from "history";
+import * as userActions from "../Redux/user/user-actions";
+import { useNavigate } from "react-router-dom";
 
 const LoginContainer = styled.div`
   max-width: 75vw;
@@ -29,8 +30,11 @@ const LoginContainer = styled.div`
 `;
 
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  let listaUsuarios = useSelector((state) => state.user.userList);
   const [isLoginMode, setIsLoginMode] = useState(true);
-  const currentUser = useSelector((state) => state.user.currentUser);
+  const [loginError, setLoginError] = useState(false);
   const [formState, inputHandler, setFormData] = useForm(
     {
       email: {
@@ -73,6 +77,32 @@ const Login = () => {
       );
     }
     setIsLoginMode((prevMode) => !prevMode);
+    setLoginError(false);
+  };
+
+  const loginUser = (e) => {
+    e.preventDefault();
+    listaUsuarios.forEach((usuario) => {
+      if (
+        formState.inputs.email.value === usuario.email.value &&
+        formState.inputs.password.value === usuario.password.value
+      ) {
+        dispatch(userActions.setCurrentUser(usuario));
+        setLoginError(false);
+        navigate(-1);
+      } else setLoginError(true);
+    });
+  };
+
+  const registerUser = (e) => {
+    e.preventDefault();
+    if (formState.isValid) {
+      dispatch(userActions.saveNewUser(formState.inputs));
+      dispatch(userActions.setCurrentUser(formState.inputs));
+      navigate(-1);
+    } else {
+      return;
+    }
   };
 
   return (
@@ -109,9 +139,17 @@ const Login = () => {
             errorText="Campo Obligatorio"
           />
 
-          <FormButton onClick={""}>
-            {isLoginMode ? "Ingresar" : "Registrarse"}
-          </FormButton>
+          {isLoginMode ? (
+            <FormButton onClick={loginUser}>Ingresar</FormButton>
+          ) : (
+            <FormButton onClick={registerUser}>Registrarse</FormButton>
+          )}
+          {loginError && (
+            <p style={{ color: "red", fontSize: "0.7rem" }}>
+              Las credenciales no son válidas.
+            </p>
+          )}
+
           <FormLabel onClick={changeModeHandler}>
             {isLoginMode
               ? "Aún no tenés cuenta? Creala acá!"

@@ -3,7 +3,8 @@ import styled from "styled-components";
 import LogoImg from "../../img/logo.jpg";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import * as cartActions from "../../Redux/cart/cart-actions";
-import { useDispatch } from "react-redux";
+import * as userActions from "../../Redux/user/user-actions";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header`
@@ -49,6 +50,14 @@ const HeaderRight = styled.ul`
 const RightLi = styled.li`
   padding-right: 30px;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+`;
+
+const sesionBtn = styled.p`
+  margin-left: 2px;
+  font-size: 0.1rem;
 `;
 
 const Header = () => {
@@ -58,6 +67,12 @@ const Header = () => {
     dispatch(cartActions.toggleCart());
   };
 
+  const nombreUser = useSelector(
+    (state) => state.user.currentUser?.displayName?.value
+  );
+  const cerrarSesion = () => {
+    dispatch(userActions.setCurrentUser({}));
+  };
   return (
     <HeaderContainer>
       <HeaderLinks>
@@ -75,17 +90,33 @@ const Header = () => {
         </Link>
       </LogoContainer>
       <HeaderRight>
-        <RightLi>Hola, persona!</RightLi>
         <RightLi>
-          <Link to="/login">
-            <FaUser
-              style={{
-                color: "#a509e2",
-                fontSize: "1.5rem",
-                cursor: "pointer",
-              }}
-            />
-          </Link>
+          {nombreUser ? (
+            <>
+              Hola, {nombreUser}!
+              <sesionBtn
+                onClick={cerrarSesion}
+                style={{
+                  color: "#a509e2",
+                  fontSize: "0.7rem",
+                  cursor: "pointer",
+                  marginTop: "3px",
+                }}
+              >
+                Cerrar sesión
+              </sesionBtn>
+            </>
+          ) : (
+            <Link to="/login">
+              <FaUser
+                style={{
+                  color: "#a509e2",
+                  fontSize: "1.5rem",
+                  cursor: "pointer",
+                }}
+              />
+            </Link>
+          )}
         </RightLi>
         <RightLi>
           <FaShoppingCart
