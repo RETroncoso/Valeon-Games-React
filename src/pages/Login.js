@@ -20,13 +20,12 @@ import * as userActions from "../Redux/user/user-actions";
 import { useNavigate } from "react-router-dom";
 
 const LoginContainer = styled.div`
-  max-width: 75vw;
-  margin-top: 11vh;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #252525;
-  box-shadow: 0 0 7px 6px black;
+  width: 400px;
 `;
 
 const Login = () => {

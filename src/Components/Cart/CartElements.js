@@ -10,7 +10,7 @@ export const CartContent = styled.div`
 
 export const CartContainer = styled.div`
   padding: 10px;
-  border-bottom: 1px solid #a509e2;
+  border-bottom: 1px solid #d3bfd6;
 `;
 export const CartItem = styled.div`
   padding: 10px 5px;
@@ -36,19 +36,23 @@ export const CartFooter = styled.div`
 `;
 
 export const ConfirmButton = styled.div`
-  margin: 10px;
+  border: none;
+  margin: 15px;
+  font-weight: 800;
+  background-color: #21af7c;
   color: white;
-  height: auto;
-  border-radius: 8px;
-  padding: 10px;
-  width: 200px;
-  cursor: pointer;
-  background-color: #a509e2;
+  border-radius: 12px;
+  font-size: 1rem;
   text-align: center;
-  &:hover {
-    opacity: 0.7;
-  }
-  &:active {
-    opacity: 1;
-  }
+  width: 200px;
+  height: 30px;
+  line-height: 30px;
+}
+&:hover {
+  cursor: pointer;
+}
+&:active {
+  background-color: #1e996c;
+  box-shadow: 0px 0px 5px 1px white;
+}
 `;

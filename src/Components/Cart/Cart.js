@@ -16,10 +16,10 @@ import * as cartActions from "../../Redux/cart/cart-actions";
 const StyledCart = styled.div`
   position: fixed;
   right: 0px;
-  top: 11vh;
+  top: 39px;
   width: 340px;
   background-color: #252525;
-  height: calc(100% - 11vh);
+  height: 100%;
   z-index: 10;
   display: flex;
   flex-direction: column;

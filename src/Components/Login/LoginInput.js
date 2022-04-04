@@ -10,13 +10,13 @@ const FormControl = styled.div`
 `;
 
 const FormInput = styled.input`
-  box-shadow: 0 0 7px 3px black;
-  border: none;
-  border-radius: 15px;
-  background-color: #a509e2;
-  font-size: 1.1rem;
-  padding-left: 10px;
-  margin: 10px 35px;
+  width: 100%;
+  font-size: 1.25rem;
+  border: 2px solid #6e7198;
+  border-radius: 12px;
+  color: white;
+  background-color: #121212;
+  padding: 5px 10px;
   ${({ showError }) =>
     showError
       ? css`

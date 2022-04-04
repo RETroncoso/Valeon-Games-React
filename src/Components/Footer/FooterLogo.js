@@ -2,35 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import logoFooter from "../../img/logo.jpg";
 
-const StyledFooterLogo = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 33%;
-`;
-
 const StyledLogoContainer = styled.div`
-  height: 100%;
   display: flex;
-  flex-direction: column;
+  width: 33%;
   align-items: center;
+  justify-content: flex-start;
   img {
-    height: 75%;
-    border-radius: 50%;
-  }
-  p {
-    margin-bottom: 10px;
-    font-size: 0.75rem;
+    padding-left: 25px;
+    height: 2vh;
   }
 `;
 
 export const FooterLogo = () => {
   return (
-    <StyledFooterLogo>
-      <StyledLogoContainer>
-        <img src={logoFooter} />
-        <p>&copy; 2022 Rodrigo Troncoso for NUCBA</p>
-      </StyledLogoContainer>
-    </StyledFooterLogo>
+    <StyledLogoContainer>
+      <img src={logoFooter} alt="Logo de Valeon Games" />
+    </StyledLogoContainer>
   );
 };

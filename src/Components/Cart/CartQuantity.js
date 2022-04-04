@@ -17,7 +17,7 @@ const ManagerContainer = styled.div`
   margin: 5px;
   height: 32px;
   padding: 10px;
-  box-shadow: 0px 0px 20px 7px rgba(235, 83, 202, 0.16);
+  box-shadow: 0px 0px 11px 0px #21af7c;
 `;
 
 const QuantityStyled = styled.span`
@@ -28,7 +28,7 @@ const QuantityStyled = styled.span`
 
 const QuantityButton = styled.div`
   width: 23px;
-  color: violet;
+  color: #21af7c;
   font-size: 20px;
   text-align: center;
   cursor: pointer;
@@ -41,7 +41,7 @@ const DeleteIconStyled = styled.div`
   height: 17px;
   cursor: pointer;
   margin: 0 10px;
-  color: violet;
+  color: #21af7c;
 `;
 
 export const CartQuantity = ({ product }) => {

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const HeaderContainer = styled.header`
   background: linear-gradient(180deg, #151515 0%, #1f1f1f 97.92%);
   width: 100%;
-  height: 11vh;
+  height: 39px;
   display: flex;
   justify-content: space-between;
   z-index: 6;
