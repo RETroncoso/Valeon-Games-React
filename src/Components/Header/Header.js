@@ -8,8 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header`
-  background-color: #1f1f1f;
-  width: 100vw;
+  background: linear-gradient(180deg, #151515 0%, #1f1f1f 97.92%);
+  width: 100%;
   height: 11vh;
   display: flex;
   justify-content: space-between;
@@ -26,17 +26,32 @@ const HeaderLinks = styled.ul`
 `;
 
 const HeaderLi = styled.li`
-  padding-left: 20px;
+  float: left;
+  position: relative;
+  padding: 10px 20px;
+  &:after {
+    background-color: #40e2c1;
+    content: "";
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    transition: width 0.35s ease 0s;
+    position: absolute;
+  }
+  &:hover::after {
+    width: 100%;
+  }
 `;
 
 const LogoContainer = styled.div`
-  max-height: 100%;
+  width: 300px;
+  display: flex;
+  align-items: center;
 `;
 
 const Logo = styled.img`
-  max-height: 100%;
-  border-radius: 50%;
-  padding: 5px;
+  max-width: 65%;
 `;
 
 const HeaderRight = styled.ul`
@@ -97,7 +112,7 @@ const Header = () => {
               <sesionBtn
                 onClick={cerrarSesion}
                 style={{
-                  color: "#a509e2",
+                  color: "#d3bfd6",
                   fontSize: "0.7rem",
                   cursor: "pointer",
                   marginTop: "3px",
@@ -110,7 +125,7 @@ const Header = () => {
             <Link to="/login">
               <FaUser
                 style={{
-                  color: "#a509e2",
+                  color: "#d3bfd6",
                   fontSize: "1.5rem",
                   cursor: "pointer",
                 }}
@@ -121,7 +136,7 @@ const Header = () => {
         <RightLi>
           <FaShoppingCart
             onClick={() => showMenu()}
-            style={{ color: "#a509e2", fontSize: "1.5rem", cursor: "pointer" }}
+            style={{ color: "#d3bfd6", fontSize: "1.5rem", cursor: "pointer" }}
           />
         </RightLi>
       </HeaderRight>

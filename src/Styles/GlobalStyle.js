@@ -5,6 +5,10 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
+html {
+  height: 100vh;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #121212;
@@ -14,17 +18,13 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
-    width: 98.5%;
+    width: 100%;
 }
 
 a {
     text-decoration: none;
-    color: #a509e2;
+    color: #d3bfd6;
     font-weight: 600;
-}
-
-a:hover {
-    color: #cd83eb;
 }
 
 li {

@@ -18,7 +18,7 @@ export const productsItems = [
     nombre: "Mouse Redragon Griffin M607",
     precio: 1599,
     section: "Mouse",
-    foto: "/img/m3.jpg",
+    foto: "/img/m3.png",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const productsItems = [
   },
   {
     id: 5,
-    nombre: "Teclado Redragon Dragonborn K630",
+    nombre: "Teclado Redragon K630",
     precio: 4882,
     section: "Teclado",
     foto: "/img/t1.jpg",

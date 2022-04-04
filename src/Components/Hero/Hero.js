@@ -1,36 +1,79 @@
 import React from "react";
 import styled from "styled-components";
-import NosotrosImg from "../../img/nosotros.png";
+import NosotrosImg from "../../img/pc_hero.png";
 
 const StyledHero = styled.div`
+  margin-top: 50px;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin-top: 11vh;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(${NosotrosImg});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  height: 400px;
   margin-bottom: 50px;
+`;
+
+const HeroL = styled.div`
+  width: 60%;
+  margin-left: 50px;
+  h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin: 0;
+  }
   p {
-    font-size: 1.5rem;
-    margin: 10px;
-    margin-bottom: 25px;
+    font-size: 1.25rem;
+  }
+`;
+
+const HeroBtn = styled.button`
+  font-weight: 600;
+  border-radius: 10px;
+  margin-left: 15px;
+  padding: 6px 10px;
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px 3px white;
+  }
+`;
+
+const HeroR = styled.div`
+  width: 50%;
+  img {
+    position: absolute;
+    right: 0;
+    height: 400px;
   }
 `;
 
 const Hero = () => {
   return (
     <StyledHero>
-      <h2 style={{ fontSize: "4rem" }}>Somos Valeon Games!</h2>
-      <p>Una tienda creada POR gamers, PARA gamers</p>
-      <p>
-        Conocemos la GRAN diferencia que hace un periferico de calidad a la hora
-        de jugar y por eso nuestra meta es ofrecer la mejor calidad al menor
-        precio posible.
-      </p>
+      <HeroL>
+        <h3>Somos</h3>
+        <h2>Valeon Games</h2>
+        <p>Una tienda creada POR gamers, PARA gamers</p>
+        <p>
+          Conocemos la GRAN diferencia que hace un periferico de calidad a la
+          hora de jugar y por eso nuestra meta es ofrecer la mejor calidad al
+          menor precio posible.
+        </p>
+        <HeroBtn
+          style={{
+            backgroundColor: "#121212",
+            color: "white",
+            border: "29x solid #ffffff",
+          }}
+        >
+          VER PRODUCTOS
+        </HeroBtn>
+        <HeroBtn style={{ border: "none" }}>CONSULTANOS</HeroBtn>
+      </HeroL>
+      <HeroR>
+        <img src={NosotrosImg} alt="" />
+      </HeroR>
     </StyledHero>
   );
 };

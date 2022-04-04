@@ -6,23 +6,35 @@ import { useDispatch, useSelector } from "react-redux";
 import * as cartActions from "../../Redux/cart/cart-actions";
 
 const StyledCard = styled.div`
-  border: violet 1px solid;
-  border-radius: 10px;
-  background-color: #252525;
-  padding: 10px;
-  margin: 10px;
-  text-align: center;
-  width: 400px;
-  height: 635px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  color: white;
+  border-radius: 24px;
+  border: 2px solid #6e7198;
+  margin: 10px;
+  position: relative;
+  width: 400px;
+  height: 550px;
   justify-content: space-between;
-  &:hover {
-    background-color: #323232;
-    border: violet 1px;
-    box-shadow: #a3a3a3 0px 0px 18px 0px;
-  }
+`;
+
+const CardSup = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+`;
+
+const CardInf = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  padding-top: 10px;
 `;
 
 const StyledTitle = styled.p`
@@ -31,25 +43,41 @@ const StyledTitle = styled.p`
   padding: 0px 10px;
   padding-top: 15px;
 `;
-const StyledImg = styled.img`
-  max-width: 300px;
-  max-height: 400px; ;
+const StyledImg = styled.div`
+  width: 100%;
+  img {
+    padding: 10px;
+    border-radius: 20px;
+    width: 95%;
+  }
+  h5 {
+    font-size: 1.4rem;
+    margin: 30px 0px;
+  }
 `;
 const StyledPrice = styled.p`
-  font-size: 1.5rem;
-  padding-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-left: 40px;
+  font-size: 1.3rem;
+  font-weight: 700;
 `;
 
-const StyledIcon = styled.div`
-  margin-top: 15px;
-  color: violet;
-  font-size: 2rem;
-  &:hover {
+const StyledAdd = styled.button`
+  border: none;
+  font-weight: 800;
+  background-color: #2de2a1;
+  color: white;
+  border-radius: 12px;
+  font-size: 1rem;
+  text-align: center;
+  width: 110px;
+  height: 45px;
+  margin-right: 20px;
+  :hover {
     cursor: pointer;
-    color: #742fb9;
+  }
+  :active {
+    background-color: #1e996c;
+    box-shadow: 0px 0px 5px 1px white;
   }
 `;
 
@@ -65,14 +93,16 @@ export const Card = ({ producto }) => {
 
   return (
     <StyledCard>
-      <StyledTitle>{producto.nombre}</StyledTitle>
-      <StyledImg src={producto.foto} />
-      <StyledPrice>
-        {formatPrice(producto.precio)}
-        <StyledIcon>
-          <MdOutlineAddShoppingCart onClick={agregarItem} />
-        </StyledIcon>
-      </StyledPrice>
+      <CardSup>
+        <StyledImg>
+          <img src={producto.foto} />
+        </StyledImg>
+        <StyledTitle>{producto.nombre}</StyledTitle>
+      </CardSup>
+      <CardInf>
+        <StyledPrice>{formatPrice(producto.precio)}</StyledPrice>
+        <StyledAdd onClick={agregarItem}>AGREGAR</StyledAdd>
+      </CardInf>
     </StyledCard>
   );
 };
