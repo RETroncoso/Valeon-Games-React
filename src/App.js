@@ -12,6 +12,7 @@ import Wrapper from "./Components/Wrapper/Wrapper";
 import Home from "./pages/Home";
 import { GlobalStyle } from "./Styles/GlobalStyle";
 import Login from "./pages/Login";
+import Checkout from "./pages/Checkout";
 
 function App() {
   let mostrar = useSelector((state) => state.cart.show);
@@ -29,6 +30,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
 
               <Route exact path="/login" element={<Login />} />
+              <Route exact path="/checkout" element={<Checkout />} />
             </Routes>
           </Content>
           <Footercontainer />
