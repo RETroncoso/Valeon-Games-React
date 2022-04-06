@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { formatPrice } from "../../utils/formatPrice";
-import { MdOutlineAddShoppingCart } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as cartActions from "../../Redux/cart/cart-actions";
 
 const StyledCard = styled.div`
@@ -82,20 +81,17 @@ const StyledAdd = styled.button`
 `;
 
 export const Card = ({ producto }) => {
-  const itemsEnCarrito = useSelector((state) => state.cart.cartItems);
-
   const dispatch = useDispatch();
 
   const agregarItem = () => {
     dispatch(cartActions.addItem(producto));
-    console.log(itemsEnCarrito);
   };
 
   return (
     <StyledCard>
       <CardSup>
         <StyledImg>
-          <img src={producto.foto} />
+          <img src={producto.foto} alt="Imagen del prosucto" />
         </StyledImg>
         <StyledTitle>{producto.nombre}</StyledTitle>
       </CardSup>

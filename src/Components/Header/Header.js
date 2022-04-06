@@ -70,9 +70,10 @@ const RightLi = styled.li`
   align-items: flex-end;
 `;
 
-const sesionBtn = styled.p`
+const SesionBtn = styled.p`
   margin-left: 2px;
   font-size: 0.1rem;
+  margin-bottom: 0;
 `;
 
 const Header = () => {
@@ -109,7 +110,7 @@ const Header = () => {
           {nombreUser ? (
             <>
               Hola, {nombreUser}!
-              <sesionBtn
+              <SesionBtn
                 onClick={cerrarSesion}
                 style={{
                   color: "#d3bfd6",
@@ -119,7 +120,7 @@ const Header = () => {
                 }}
               >
                 Cerrar sesión
-              </sesionBtn>
+              </SesionBtn>
             </>
           ) : (
             <Link to="/login">

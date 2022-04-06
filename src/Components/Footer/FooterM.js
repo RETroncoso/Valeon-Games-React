@@ -15,7 +15,7 @@ const StyledP = styled.div`
 export const FooterM = () => {
   return (
     <StyledP>
-      <p>&copy; 2021 Rodrigo Troncoso for Troncommerce</p>
+      <p>&copy; 2022 Rodrigo Troncoso for Troncommerce</p>
     </StyledP>
   );
 };

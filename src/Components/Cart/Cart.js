@@ -12,6 +12,7 @@ import {
 import { CartQuantity } from "./CartQuantity";
 import { formatPrice } from "../../utils/formatPrice";
 import * as cartActions from "../../Redux/cart/cart-actions";
+import { Link } from "react-router-dom";
 
 const StyledCart = styled.div`
   position: fixed;
@@ -32,6 +33,9 @@ const StyledCart = styled.div`
 export const Cart = () => {
   let mostrar = useSelector((state) => state.cart.show);
   let productosCarrito = useSelector((state) => state.cart.cartItems);
+  let activeUser = useSelector(
+    (state) => state.user?.currentUser.email?.value?.length
+  );
   const dispatch = useDispatch();
 
   const cerrarCarrito = () => {
@@ -51,7 +55,6 @@ export const Cart = () => {
           <CartContainer style={{ fontSize: "1.2rem", marginBottom: "10px" }}>
             Tu pedido:
           </CartContainer>
-
           {productosCarrito.map((product) => (
             <CartContainer>
               <CartItem>
@@ -71,11 +74,28 @@ export const Cart = () => {
               </CartItem>
             </CartContainer>
           ))}
-          <CartFooter>
-            <ConfirmButton onClick={() => cerrarCarrito()}>
-              Ir a pagar {formatPrice(total)}
-            </ConfirmButton>
-          </CartFooter>
+
+          {activeUser ? (
+            <CartFooter>
+              <Link to="/checkout">
+                <ConfirmButton onClick={() => cerrarCarrito()}>
+                  Ir a pagar {formatPrice(total)}
+                </ConfirmButton>
+              </Link>
+            </CartFooter>
+          ) : (
+            <CartFooter>
+              <span
+                style={{
+                  marginTop: "10px",
+                  letterSpacing: "0.2px",
+                  fontSize: "0.9rem",
+                }}
+              >
+                Debes iniciar sesión para poder finalizar tu compra
+              </span>
+            </CartFooter>
+          )}
         </CartContent>
       )}
     </StyledCart>
