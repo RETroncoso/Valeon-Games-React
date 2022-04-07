@@ -13,9 +13,11 @@ import Home from "./pages/Home";
 import { GlobalStyle } from "./Styles/GlobalStyle";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
+import ConfirmModal from "./Components/ConfirmModal/ConfirmModal";
 
 function App() {
   let mostrar = useSelector((state) => state.cart.show);
+  let modal = useSelector((state) => state.cart.modal);
 
   return (
     <>
@@ -23,6 +25,8 @@ function App() {
       <BrowserRouter>
         <Header />
         {mostrar && <Shadow />}
+        {modal && <ConfirmModal />}
+
         <Cart />
         <Wrapper>
           <Content>

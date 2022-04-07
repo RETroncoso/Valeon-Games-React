@@ -34,7 +34,7 @@ export const Cart = () => {
   let mostrar = useSelector((state) => state.cart.show);
   let productosCarrito = useSelector((state) => state.cart.cartItems);
   let activeUser = useSelector(
-    (state) => state.user?.currentUser.email?.value?.length
+    (state) => state.user?.currentUser?.email?.value?.length
   );
   const dispatch = useDispatch();
 

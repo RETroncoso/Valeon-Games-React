@@ -85,6 +85,10 @@ export const Card = ({ producto }) => {
 
   const agregarItem = () => {
     dispatch(cartActions.addItem(producto));
+    dispatch(cartActions.holaModal());
+    setTimeout(() => {
+      dispatch(cartActions.chauModal());
+    }, 2000);
   };
 
   return (

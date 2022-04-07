@@ -40,12 +40,44 @@ const SearchBar = styled.div`
   padding-left: 40px;
 `;
 
+const SearchDiv = styled.div`
+  display: flex;
+  width: 100%;
+`;
+
+const BtnDiv = styled.div`
+  display: flex;
+  padding-left: 30px;
+  padding-right: 20px;
+  width: 50%;
+  justify-content: space-around;
+`;
+
+const FilterBtn = styled.button`
+  border: none;
+  color: white;
+  background-color: #bb9243;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 0.9rem;
+  width: 125px;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: 0px 0px 5px 1px white;
+  }
+`;
+
 export const CustomInput = (props) => {
   const dispatch = useDispatch();
 
   const searchHandler = (e) => {
-    console.log(e.target.value);
     dispatch(productsActions.searchItem(e.target.value));
+  };
+
+  const filterHandler = ({ target }) => {
+    dispatch(productsActions.filterItem(target.innerText));
   };
 
   return (
@@ -63,14 +95,21 @@ export const CustomInput = (props) => {
             top: "27px",
           }}
         />
-        <StyledInput
-          onChange={searchHandler}
-          placeholder={props.placeholder}
-          style={{
-            paddingLeft: props.paddingLeft,
-            width: props.width,
-          }}
-        />
+        <SearchDiv>
+          <StyledInput
+            onChange={searchHandler}
+            placeholder={props.placeholder}
+            style={{
+              paddingLeft: props.paddingLeft,
+              width: props.width,
+            }}
+          />
+          <BtnDiv>
+            <FilterBtn onClick={filterHandler}>MOUSE</FilterBtn>
+            <FilterBtn onClick={filterHandler}>TECLADO</FilterBtn>
+            <FilterBtn onClick={filterHandler}>AURICULARES</FilterBtn>
+          </BtnDiv>
+        </SearchDiv>
       </SearchBar>
     </SearchSection>
   );
