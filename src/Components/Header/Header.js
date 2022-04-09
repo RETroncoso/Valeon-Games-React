@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const HeaderContainer = styled.header`
   background: linear-gradient(180deg, #151515 0%, #1f1f1f 97.92%);
   width: 100%;
-  height: 39px;
+  height: 65px;
   display: flex;
   justify-content: space-between;
   z-index: 6;
@@ -113,7 +113,7 @@ const Header = () => {
               <SesionBtn
                 onClick={cerrarSesion}
                 style={{
-                  color: "#d3bfd6",
+                  color: "#fafafa",
                   fontSize: "0.7rem",
                   cursor: "pointer",
                   marginTop: "3px",
@@ -126,8 +126,8 @@ const Header = () => {
             <Link to="/login">
               <FaUser
                 style={{
-                  color: "#d3bfd6",
-                  fontSize: "1.5rem",
+                  color: "#fafafa",
+                  fontSize: "1.25rem",
                   cursor: "pointer",
                 }}
               />
@@ -137,7 +137,7 @@ const Header = () => {
         <RightLi>
           <FaShoppingCart
             onClick={() => showMenu()}
-            style={{ color: "#d3bfd6", fontSize: "1.5rem", cursor: "pointer" }}
+            style={{ color: "#fafafa", fontSize: "1.25rem", cursor: "pointer" }}
           />
         </RightLi>
       </HeaderRight>

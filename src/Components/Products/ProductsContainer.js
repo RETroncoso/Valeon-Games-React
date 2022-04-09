@@ -5,6 +5,7 @@ import { Card } from "../Card/Card";
 
 const StyledProd = styled.div`
   margin-top: 30px;
+  margin-bottom: 100px;
   display: flex;
   flex-wrap: wrap;
   max-width: 95%;

@@ -3,12 +3,12 @@ import styled from "styled-components";
 
 const DivModal = styled.div`
   position: fixed;
-  bottom: 0;
+  bottom: 7vh;
   border-radius: 10px 10px 0px 0px;
   border: 2px solid #2de2a1;
   background-color: #121212;
   height: 50px;
-  width: 400px;
+  width: 600px;
   z-index: 6;
   text-align: center;
   padding-top: 13px;

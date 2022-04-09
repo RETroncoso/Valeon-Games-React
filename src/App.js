@@ -31,7 +31,7 @@ function App() {
         <Wrapper>
           <Content>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route exact path="/" element={<Home />} />
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/checkout" element={<Checkout />} />
             </Routes>

@@ -12,7 +12,7 @@ const RedesContainer = styled.div`
 const StyledRedes = styled.ul`
   margin: 0;
   display: flex;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   align-items: center;
   padding-right: 30px;
   li {

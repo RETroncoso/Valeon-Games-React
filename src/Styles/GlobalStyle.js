@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 html {
-  height: 100vh;
+ height: 100%;
 }
 
 body {
@@ -17,14 +17,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
     width: 100%;
-    height: 100%;
 }
 
 a {
     text-decoration: none;
-    color: #d3bfd6;
+    color: #fafafa;
     font-weight: 600;
 }
 

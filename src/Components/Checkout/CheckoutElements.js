@@ -5,6 +5,7 @@ export const CheckoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  margin-bottom: 7vh;
 `;
 export const ProductsContainer = styled.div`
   width: 95%;

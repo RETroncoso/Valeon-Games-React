@@ -15,6 +15,7 @@ const ManagerContainer = styled.div`
   align-items: center;
   border-radius: 8px;
   margin: 5px;
+  margin-left: 10px;
   height: 32px;
   padding: 10px;
   box-shadow: 0px 0px 11px 0px #21af7c;

@@ -9,14 +9,15 @@ const StyledFooterContainer = styled.footer`
   display: flex;
   margin-top: 25px;
   width: 100%;
-  height: 6vh;
+  height: 7vh;
   justify-content: space-between;
   padding-top: 10px;
   padding-bottom: 10px;
   align-items: center;
   margin-bottom: 0;
-  position: relative;
+  position: fixed;
   bottom: 0;
+  z-index: 6;
 `;
 
 export const Footercontainer = () => {

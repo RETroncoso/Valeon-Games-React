@@ -56,7 +56,7 @@ const BtnDiv = styled.div`
 const FilterBtn = styled.button`
   border: none;
   color: white;
-  background-color: #bb9243;
+  background-color: #6e7198;
   border-radius: 10px;
   font-weight: bolder;
   font-size: 0.9rem;

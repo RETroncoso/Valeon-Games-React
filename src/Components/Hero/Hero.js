@@ -11,6 +11,7 @@ const StyledHero = styled.div`
 `;
 
 const HeroL = styled.div`
+  padding-top: 20px;
   width: 60%;
   margin-left: 50px;
   h3 {
@@ -33,9 +34,11 @@ const HeroBtn = styled.button`
   border-radius: 10px;
   margin-left: 15px;
   padding: 6px 10px;
+  height: 40px;
+  width: 150px;
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 10px 3px white;
+    box-shadow: 0 0 10px 3px #686868;
   }
 `;
 

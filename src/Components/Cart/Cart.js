@@ -17,10 +17,11 @@ import { Link } from "react-router-dom";
 const StyledCart = styled.div`
   position: fixed;
   right: 0px;
-  top: 39px;
+  top: 65px;
   width: 340px;
+  padding-bottom: 5vh;
   background-color: #252525;
-  height: 100%;
+  height: calc(100% - 65px);
   z-index: 10;
   display: flex;
   flex-direction: column;

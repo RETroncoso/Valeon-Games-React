@@ -10,7 +10,7 @@ export const CartContent = styled.div`
 
 export const CartContainer = styled.div`
   padding: 10px;
-  border-bottom: 1px solid #d3bfd6;
+  border-bottom: 1px solid #6e7198;
 `;
 export const CartItem = styled.div`
   padding: 10px 5px;
