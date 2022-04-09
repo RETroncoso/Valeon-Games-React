@@ -81,7 +81,7 @@ export const CustomInput = (props) => {
   };
 
   return (
-    <SearchSection>
+    <SearchSection id="productos">
       <h3>Los más destacados</h3>
       <SearchBar>
         <p>¿Qué andás buscando?</p>

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NosotrosImg from "../../img/pc_hero.png";
+import { Link } from "react-router-dom";
 
 const StyledHero = styled.div`
   margin-top: 50px;
@@ -38,7 +39,7 @@ const HeroBtn = styled.button`
   width: 150px;
   &:hover {
     cursor: pointer;
-    box-shadow: 0 0 10px 3px #686868;
+    box-shadow: rgb(38 38 38) 0px 0px 16px 5px;
   }
 `;
 
@@ -53,7 +54,7 @@ const HeroR = styled.div`
 
 const Hero = () => {
   return (
-    <StyledHero>
+    <StyledHero id="nosotros">
       <HeroL>
         <h3>Somos</h3>
         <h2>Valeon Games</h2>
@@ -63,15 +64,17 @@ const Hero = () => {
           hora de jugar y por eso nuestra meta es ofrecer la mejor calidad al
           menor precio posible.
         </p>
-        <HeroBtn
-          style={{
-            backgroundColor: "#121212",
-            color: "white",
-            border: "29x solid #ffffff",
-          }}
-        >
-          VER PRODUCTOS
-        </HeroBtn>
+        <Link to="/#productos">
+          <HeroBtn
+            style={{
+              backgroundColor: "#121212",
+              color: "white",
+              border: "29x solid #ffffff",
+            }}
+          >
+            VER PRODUCTOS
+          </HeroBtn>
+        </Link>
         <HeroBtn style={{ border: "none" }}>CONSULTANOS</HeroBtn>
       </HeroL>
       <HeroR>

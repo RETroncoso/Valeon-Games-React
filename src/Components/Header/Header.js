@@ -93,10 +93,10 @@ const Header = () => {
     <HeaderContainer>
       <HeaderLinks>
         <HeaderLi>
-          <a href="#nosotros">Nosotros</a>
+          <a href="/#nosotros">Nosotros</a>
         </HeaderLi>
         <HeaderLi>
-          <a href="#productos">Productos</a>
+          <a href="/#productos">Productos</a>
         </HeaderLi>
       </HeaderLinks>
 
