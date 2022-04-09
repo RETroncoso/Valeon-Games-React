@@ -64,7 +64,7 @@ const Hero = () => {
           hora de jugar y por eso nuestra meta es ofrecer la mejor calidad al
           menor precio posible.
         </p>
-        <Link to="/#productos">
+        <a href="/#productos">
           <HeroBtn
             style={{
               backgroundColor: "#121212",
@@ -74,7 +74,7 @@ const Hero = () => {
           >
             VER PRODUCTOS
           </HeroBtn>
-        </Link>
+        </a>
         <HeroBtn style={{ border: "none" }}>CONSULTANOS</HeroBtn>
       </HeroL>
       <HeroR>
